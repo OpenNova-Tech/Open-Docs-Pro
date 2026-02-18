@@ -65,7 +65,7 @@ interface WorldProps {
 export function Globe({ globeConfig, data }: WorldProps) {
   const globeRef = useRef<ThreeGlobe | null>(null);
   const groupRef = useRef<Group>(null);
-  const [isInitialized] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   const defaultProps = {
     pointSize: 1,
@@ -89,6 +89,9 @@ export function Globe({ globeConfig, data }: WorldProps) {
     if (!globeRef.current && groupRef.current) {
       globeRef.current = new ThreeGlobe();
       (groupRef.current as any).add(globeRef.current);
+
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setIsInitialized(true);
     }
   }, []);
 

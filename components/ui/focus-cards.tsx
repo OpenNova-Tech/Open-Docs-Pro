@@ -34,7 +34,7 @@ export const Card = React.memo(
         />
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="absolute inset-0  opacity-0 group-hover:opacity-100 transition-opacity" />
 
         {/* Text Content */}
         <div
